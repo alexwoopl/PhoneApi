@@ -17,6 +17,9 @@ Create a specification & Implementation for 3 APIs:
 - This looks like its to support contact information display so ill assume its for that.
 - Each number can be active or inactive but new status may come in the future.
 - Phone numbers aren't always just numbers!
+## Tech used
+- Java 11
+- Springboot 2.5.6
 
 
 # Specification
