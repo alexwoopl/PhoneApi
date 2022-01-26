@@ -63,8 +63,8 @@ class PhoneApiApplicationSmokeTests {
 		List<String> result = responseEntity.getBody();
 		assertEquals(HttpStatus.OK, responseEntity.getStatusCode());
 
-		assertEquals(result.size(), 1);
-		assertEquals(result.get(0), "(84)4563456345634563456354");
+		assertEquals(1, result.size());
+		assertEquals("(84)4563456345634563456354", result.get(0));
 	}
 
 	@Test

@@ -34,7 +34,7 @@ class AllNumbersApiTest {
 
         List<String> result = allNumbersApi.getAllNumbers();
 
-        assertEquals(result, Collections.emptyList());
+        assertEquals(Collections.emptyList(), result);
     }
 
     @Test
@@ -44,7 +44,7 @@ class AllNumbersApiTest {
 
         List<String> result = allNumbersApi.getAllNumbers();
 
-        assertEquals(result, testPhoneNumbers);
+        assertEquals(testPhoneNumbers, result);
     }
 
     @Test
@@ -63,7 +63,7 @@ class AllNumbersApiTest {
 
         List<String> result = allNumbersApi.getAllCustomerNumbers("test");
 
-        assertEquals(result, testPhoneNumbers);
+        assertEquals(testPhoneNumbers, result);
     }
 
     @Test
@@ -73,7 +73,7 @@ class AllNumbersApiTest {
 
         List<String> result = allNumbersApi.getAllCustomerNumbers("test");
 
-        assertEquals(result, testPhoneNumbers);
+        assertEquals(testPhoneNumbers, result);
     }
 
     @Test
