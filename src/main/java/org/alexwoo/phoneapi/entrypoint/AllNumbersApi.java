@@ -1,6 +1,7 @@
 package org.alexwoo.phoneapi.entrypoint;
 
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.alexwoo.phoneapi.handler.PhoneNumbersHandler;
 import org.alexwoo.phoneapi.validate.GUID;
 import org.springframework.http.HttpStatus;
@@ -15,6 +16,7 @@ import java.util.List;
 @RestController
 @Validated
 @AllArgsConstructor
+@Slf4j
 public class AllNumbersApi extends BaseEntryPoint {
 
     private PhoneNumbersHandler phoneNumbersHandler;
@@ -22,7 +24,10 @@ public class AllNumbersApi extends BaseEntryPoint {
     @GetMapping("/getAllNumbers")
     @ResponseStatus(HttpStatus.OK)
     public List<String> getAllNumbers(){
-        return phoneNumbersHandler.getAllNumbers();
+        log.info("getAllNumbers API called.");
+        List<String> allNumbers = phoneNumbersHandler.getAllNumbers();
+        log.info("getAllNumbers API returning " + allNumbers.size() + " results");
+        return allNumbers;
     }
 
 
@@ -30,7 +35,10 @@ public class AllNumbersApi extends BaseEntryPoint {
     @ResponseStatus(HttpStatus.OK)
     @Validated
     public List<String> getAllCustomerNumbers(@PathVariable("customerId") @GUID String customerId){
-        return phoneNumbersHandler.getNumbers(customerId);
+        log.info("getAllCustomerNumbers API called with parameter: " + customerId);
+        List<String> numbers = phoneNumbersHandler.getNumbers(customerId);
+        log.info("getAllCustomerNumbers API returning " + numbers.size() + " results");
+        return numbers;
     }
 
 
