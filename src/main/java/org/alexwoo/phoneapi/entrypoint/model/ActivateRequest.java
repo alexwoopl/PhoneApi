@@ -19,7 +19,7 @@ public class ActivateRequest {
     @NotNull
     private String customerId;
     @NotNull
-    @Pattern(regexp="([0-9]| |-|\\+|\\(|\\))+") //^ $
+    @Pattern(regexp="([0-9]| |-|\\+|\\(|\\))+")
     private String phoneNumber;
 
 }
